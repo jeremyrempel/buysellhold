@@ -3,3 +3,6 @@ docker-start:
 
 docker-stop:
 	sudo docker-compose -f stack.yml down
+
+build-image:
+	sudo ./gradlew clean bootBuildImage

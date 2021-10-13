@@ -12,7 +12,7 @@ services:
       - 5432:5432
 
   app:
-    image: docker.io/library/buysellhold:0.0.1-SNAPSHOT
+    image: bshapi 
     restart: always
     ports:
       - 9090:9090

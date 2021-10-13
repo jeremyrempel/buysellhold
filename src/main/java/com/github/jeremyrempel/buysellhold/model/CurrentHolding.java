@@ -5,7 +5,6 @@ import org.springframework.data.annotation.Id;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public record CurrentHolding(@Id Long id, String title, @JsonProperty("buy_date") LocalDate buyDate,
                              LocalDateTime createDate) {

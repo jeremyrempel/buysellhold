@@ -5,4 +5,7 @@ docker-stop:
 	sudo docker-compose -f stack.yml down
 
 build-image:
-	sudo ./gradlew clean bootBuildImage
+	pls docker build . -t bshapi
+
+deploy:
+	gcloud run deploy

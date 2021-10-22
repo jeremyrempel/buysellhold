@@ -14,9 +14,6 @@ import org.springframework.data.r2dbc.repository.config.EnableR2dbcRepositories;
 
 import java.time.Duration;
 
-@SpringBootApplication
-@Configuration
-@EnableR2dbcRepositories
 public class R2dbConfiguration extends AbstractR2dbcConfiguration {
 
     @Value("${connectionString}")

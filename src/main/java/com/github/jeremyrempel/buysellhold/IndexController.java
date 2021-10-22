@@ -21,14 +21,18 @@ public class IndexController {
         this.repository = repository;
     }
 
+    @GetMapping("/")
+    public Mono<String> index() {
+        return Mono.just("hello world");
+    }
 
     @GetMapping("/holdings")
-    public Flux<CurrentHolding> index() {
+    public Flux<CurrentHolding> holdingsList() {
         return repository.findAll();
     }
 
     @PostMapping("/holdings")
-    public Mono<ResponseHoldingCreate> create(@RequestBody CurrentHolding holding) {
+    public Mono<ResponseHoldingCreate> createHoldings(@RequestBody CurrentHolding holding) {
         return repository
                 .save(holding)
                 .map(CurrentHolding::getId)

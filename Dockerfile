@@ -3,7 +3,7 @@ FROM openjdk:17-jdk as build
 # compile app
 WORKDIR /java/src/app
 ADD . /java/src/app
-RUN ./gradlew build
+RUN ./gradlew build --no-daemon
 
 # Now copy it into our base image.
 FROM openjdk:17-jdk

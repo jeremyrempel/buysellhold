@@ -4,19 +4,23 @@ import org.springframework.data.annotation.Id;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 public class CurrentHolding {
 
     @Id
     Long id;
     String title;
+    String symbol;
     LocalDate buyDate;
     LocalDateTime createDate;
 
     public CurrentHolding(
             String title,
+            Optional<String> symbol,
             LocalDate buyDate
     ) {
+        this.symbol = symbol.orElseThrow();
         this.title = title;
         this.buyDate = buyDate;
         this.createDate = LocalDateTime.now();

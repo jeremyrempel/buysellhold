@@ -6,10 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-
-import java.util.Optional;
 
 @RestController
 public class IndexController {
@@ -22,20 +18,17 @@ public class IndexController {
     }
 
     @GetMapping("/")
-    public Mono<String> index() {
-        return Mono.just("hello world");
+    public String index() {
+        return "hello world";
     }
 
     @GetMapping("/holdings")
-    public Flux<CurrentHolding> holdingsList() {
+    public Iterable<CurrentHolding> holdingsList() {
         return repository.findAll();
     }
 
     @PostMapping("/holdings")
-    public Mono<ResponseHoldingCreate> createHoldings(@RequestBody CurrentHolding holding) {
-        return repository
-                .save(holding)
-                .map(CurrentHolding::getId)
-                .map(x -> new ResponseHoldingCreate("OK", Optional.of(x)));
+    public Long createHoldings(@RequestBody CurrentHolding holding) {
+        return repository.save(holding).getId();
     }
 }

@@ -11,11 +11,6 @@ import java.sql.SQLException;
 
 @SpringBootApplication
 public class BuysellholdApplication {
-
-    @Value("${userBucket.path}")
-    private String dbUrl;
-
-
     public static void main(String[] args) {
         SpringApplication.run(BuysellholdApplication.class, args);
     }

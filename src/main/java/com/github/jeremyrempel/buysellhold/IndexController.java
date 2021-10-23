@@ -30,12 +30,7 @@ public class IndexController {
     @PostMapping("/holdings")
     public Long createHoldings(@RequestBody CurrentHoldingCreateRequest request) {
 
-        var record = new CurrentHolding(
-                null,
-                request.title(),
-                request.buyDate(),
-                null
-        );
+        var record = new CurrentHolding(request.title(), request.buyDate());
         return repository.save(record).getId();
     }
 }

@@ -13,6 +13,13 @@ public record CurrentHolding(
         LocalDateTime createDate
 ) {
 
+    public CurrentHolding(
+            String title,
+            LocalDate buyDate
+    ) {
+        this(null, title, buyDate, LocalDateTime.now());
+    }
+
     public Long getId() {
         return id;
     }

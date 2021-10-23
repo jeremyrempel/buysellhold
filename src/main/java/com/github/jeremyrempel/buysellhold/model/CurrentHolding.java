@@ -1,23 +1,25 @@
 package com.github.jeremyrempel.buysellhold.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.Id;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public record CurrentHolding(
-        @Id Long id,
-        String title,
-        @JsonProperty("buy_date") LocalDate buyDate,
-        LocalDateTime createDate
-) {
+public class CurrentHolding {
+
+    @Id
+    Long id;
+    String title;
+    LocalDate buyDate;
+    LocalDateTime createDate;
 
     public CurrentHolding(
             String title,
             LocalDate buyDate
     ) {
-        this(null, title, buyDate, LocalDateTime.now());
+        this.title = title;
+        this.buyDate = buyDate;
+        this.createDate = LocalDateTime.now();
     }
 
     public Long getId() {

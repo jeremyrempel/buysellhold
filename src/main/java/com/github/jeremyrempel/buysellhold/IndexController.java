@@ -28,7 +28,14 @@ public class IndexController {
     }
 
     @PostMapping("/holdings")
-    public Long createHoldings(@RequestBody CurrentHolding holding) {
-        return repository.save(holding).getId();
+    public Long createHoldings(@RequestBody CurrentHoldingCreateRequest request) {
+
+        var record = new CurrentHolding(
+                null,
+                request.title(),
+                request.buyDate(),
+                null
+        );
+        return repository.save(record).getId();
     }
 }

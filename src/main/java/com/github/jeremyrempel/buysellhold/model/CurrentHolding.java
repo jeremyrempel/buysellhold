@@ -12,8 +12,13 @@ public record CurrentHolding(
         @Id Long id,
         String title,
         @JsonProperty("buy_date") LocalDate buyDate,
-        @Column(value = "varchar(255) default now()") LocalDateTime createDate
+        LocalDateTime createDate
 ) {
+
+    public CurrentHolding {
+
+    }
+
     public Long getId() {
         return id;
     }

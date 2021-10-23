@@ -17,7 +17,7 @@ public record CurrentHolding(
             String title,
             LocalDate buyDate
     ) {
-        this(0L, title, buyDate, LocalDateTime.now());
+        this(null, title, buyDate, LocalDateTime.now());
     }
 
     public Long getId() {

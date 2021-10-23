@@ -20,9 +20,10 @@ ext {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
-    implementation 'org.springframework.cloud:spring-cloud-gcp-dependencies:1.2.8.RELEASE';
-    implementation 'org.springframework.cloud:spring-cloud-gcp-starter-sql-postgresql:1.2.8.RELEASE'
+//    implementation 'org.springframework.cloud:spring-cloud-gcp-dependencies:1.2.8.RELEASE';
+//    implementation 'org.springframework.cloud:spring-cloud-gcp-starter-sql-postgresql:1.2.8.RELEASE'
 
 //    implementation 'com.google.cloud:spring-cloud-gcp-starter'
     runtimeOnly 'org.postgresql:postgresql'
